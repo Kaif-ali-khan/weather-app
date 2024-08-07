@@ -16,8 +16,8 @@ const dataFetch = () => {
 
       const dataTrans = data.map(
         (d) =>
-          `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" key="${d.id}">
-          <div class="card m-2 myCard">
+          `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3" key="${d.id}">
+          <div class="card m-2 myCard border border-dark">
                 <img src="${d.image}" class="card-img-top" style="height:200px; object-fit: contain;" alt="..." />
                 <div class="card-body">
                   <h5 class="card-title" style="text-overflow: ellipsis;
@@ -306,7 +306,7 @@ const newFech = (category) => {
       });
       const dataTrans = newdata.map(
         (d) =>
-          `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" key="${d.id}">
+          `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3" key="${d.id}">
           <div class="card m-2 myCard">
                 <img src="${d.image}" class="card-img-top" style="height:200px; object-fit: contain;" alt="..." />
                 <div class="card-body">
