@@ -52,7 +52,6 @@ const dataFetch = () => {
 
 dataFetch();
 
-
 // const arr = [
 //   {
 //       "id": 1,
@@ -296,17 +295,16 @@ dataFetch();
 //   }
 // ]
 
-
-
-const newFech = (category)=>{
+const newFech = (category) => {
   fetch("https://fakestoreapi.com/products")
     .then((response) => {
       return response.json();
-    }).then((data)=>{
-      const newdata = data.filter((d)=>{
+    })
+    .then((data) => {
+      const newdata = data.filter((d) => {
         return d.category == category;
-       })
-       const dataTrans = newdata.map(
+      });
+      const dataTrans = newdata.map(
         (d) =>
           `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" key="${d.id}">
           <div class="card m-2 myCard">
@@ -327,7 +325,8 @@ const newFech = (category)=>{
       );
 
       load.innerHTML = dataTrans.join("");
-    }).catch(() => {
+    })
+    .catch(() => {
       load.innerHTML = `<div class="container d-flex justify-content-center align-items-center">
       <div class="" style="height: 400px; width: 400px;">
           <img src="img/pngtree-error-404-page-not-found-png-image_3832696-removebg-preview.png" class="w-100" alt="">
@@ -338,6 +337,4 @@ const newFech = (category)=>{
       </div>
   </div>`;
     });
-}
-
- 
+};
