@@ -91,14 +91,7 @@ const getProductData = () => {
       </div>
     </div>
 
-    `;
-    });
-};
-
-getProductData();
-
-
-{/* <div class="container similar-products my-4">
+    <div class="container similar-products my-4">
       <hr />
       <p class="display-5">Similar Products</p>
 
@@ -148,13 +141,11 @@ getProductData();
           </div>
         </div>
       </div>
-    </div> */}
+    </div>`;
+    });
+};
 
-
-
-
-
-
+getProductData();
 
 //   const dataTrans = `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3" key="${data.id}">
 //       <a href="productsdetails.html?id=${data.id}">
