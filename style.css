@@ -1,6 +1,7 @@
 .myCard{
     height: 400px;
     width: 90%;
+    cursor: pointer;
 }
 
 .myCard:hover{
@@ -10,3 +11,7 @@
 .img-size img{
     height: 50px !important;
 }
+
+
+
+

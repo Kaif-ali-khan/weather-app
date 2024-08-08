@@ -17,6 +17,7 @@ const dataFetch = () => {
       const dataTrans = data.map(
         (d) =>
           `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3" key="${d.id}">
+        <a href="productsdetails.html?id=${d.id}">
           <div class="card m-2 myCard border border-dark">
                 <img src="${d.image}" class="card-img-top" style="height:200px; object-fit: contain;" alt="..." />
                 <div class="card-body">
@@ -31,6 +32,7 @@ const dataFetch = () => {
                   </p>
                 </div>
                 </div>
+                </a>
               </div>`
       );
 
@@ -307,6 +309,7 @@ const newFech = (category) => {
       const dataTrans = newdata.map(
         (d) =>
           `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3" key="${d.id}">
+        <a href="#">
           <div class="card m-2 myCard border border-dark">
                 <img src="${d.image}" class="card-img-top" style="height:200px; object-fit: contain;" alt="..." />
                 <div class="card-body">
@@ -321,6 +324,7 @@ const newFech = (category) => {
                   </p>
                 </div>
                 </div>
+                </a>
               </div>`
       );
 
