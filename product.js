@@ -1,19 +1,21 @@
 const getProductData = () => {
   const queryString = window.location.search;
-  console.log(queryString);
+  // console.log(queryString);
 
   const urlParams = new URLSearchParams(queryString);
   const id = urlParams.get("id");
-  console.log(id, "id");
+  // console.log(id, "id");
   fetch(`https://fakestoreapi.com/products/${id}`)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
+      const pCategory = data.category;
+      similarCategoryProducts(pCategory);
+      console.log("data",data);
 
       const divtarg = document.getElementById("parentProduct");
-      console.log(divtarg, "divtarg");
+      // console.log(divtarg, "divtarg");
       divtarg.innerHTML = `<div class="container my-5">
       <div class="row" id="parentProduct">
         <div class="col-md-5">
@@ -89,81 +91,34 @@ const getProductData = () => {
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="container similar-products my-4">
-      <hr />
-      <p class="display-5">Similar Products</p>
-
-      <div class="row">
-        <div class="col-md-3">
-          <div class="similar-product">
-            <img
-              class="w-100"
-              src="https://source.unsplash.com/gsKdPcIyeGg"
-              alt="Preview"
-            />
-            <p class="title">Lovely black dress</p>
-            <p class="price">$100</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="similar-product">
-            <img
-              class="w-100"
-              src="https://source.unsplash.com/sg_gRhbYXhc"
-              alt="Preview"
-            />
-            <p class="title">Lovely Dress with patterns</p>
-            <p class="price">$85</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="similar-product">
-            <img
-              class="w-100"
-              src="https://source.unsplash.com/gJZQcirK8aw"
-              alt="Preview"
-            />
-            <p class="title">Lovely fashion dress</p>
-            <p class="price">$200</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="similar-product">
-            <img
-              class="w-100"
-              src="https://source.unsplash.com/qbB_Z2pXLEU"
-              alt="Preview"
-            />
-            <p class="title">Lovely red dress</p>
-            <p class="price">$120</p>
-          </div>
-        </div>
-      </div>
-    </div>`;
+    </div> `;
     });
 };
 
 getProductData();
 
-//   const dataTrans = `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3" key="${data.id}">
-//       <a href="productsdetails.html?id=${data.id}">
-//         <div class="card m-2 myCard border border-dark">
-//               <img src="${data.image}" class="card-img-top" style="height:200px; object-fit: contain;" alt="..." />
-//               <div class="card-body">
-//                 <h5 class="card-title" style="text-overflow: ellipsis;
-// overflow: hidden;  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${data.title}</h5>
-//                 <p class="card-text" style="text-overflow: ellipsis;
-// overflow: hidden;  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
-//                   ${data.description}
-//                 </p>
-//                 <p class="card-text">
-//                   <small class="text-body-secondary">$${data.price}</small>
-//                 </p>
-//               </div>
-//               </div>
-//               </a>
-//             </div>`;
+const SMP = document.getElementById("parentCategory");
+// console.log(SMP);
 
-// load.innerHTML = dataTrans.join("");
+const similarCategoryProducts = (category) => {
+  fetch(`https://fakestoreapi.com/products/category/${category}?limit=4`)
+    .then((res) => res.json())
+    .then((data) => {
+      const mapCategory = data.map(
+        (d) =>
+          `<div class="col-md-3 d-flex align-items-center justify-content-around" >
+                <div class="similar-product border border-black">
+                   <img
+                    class="w-50"
+                    src="${d.image}"
+                    alt="Preview"
+                  />
+                  <p class="title">${d.title}</p>
+                  <p class="price">$${d.price}</p>
+                </div>
+              </div>`
+      );
+
+      SMP.innerHTML = mapCategory.join("");
+    });
+};
