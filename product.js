@@ -106,7 +106,28 @@ const similarCategoryProducts = (category) => {
     .then((data) => {
       const mapCategory = data.map(
         (d) =>
-          `<div class="col-md-3 d-flex align-items-center justify-content-around" >
+          `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3" key="${d.id}">
+        <a href="productsdetails.html?id=${d.id}" style="text-decoration: none;">
+          <div class="card m-2 myCard border border-dark">
+                <img src="${d.image}" class="card-img-top" style="height:200px; object-fit: contain;" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title" style="text-overflow: ellipsis;
+  overflow: hidden;  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${d.title}</h5>
+                  <p class="card-text">
+                    <small class="text-body-secondary">$${d.price}</small>
+                  </p>
+                </div>
+                </div>
+                </a>
+              </div>`
+      );
+
+      SMP.innerHTML = mapCategory.join("");
+    });
+};
+
+
+{/* <div class="col-md-3 d-flex align-items-center justify-content-around" >
                 <div class="similar-product border border-black">
                    <img
                     class="w-50"
@@ -116,9 +137,4 @@ const similarCategoryProducts = (category) => {
                   <p class="title">${d.title}</p>
                   <p class="price">$${d.price}</p>
                 </div>
-              </div>`
-      );
-
-      SMP.innerHTML = mapCategory.join("");
-    });
-};
+              </div> */}

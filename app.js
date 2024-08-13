@@ -49,9 +49,7 @@ const dataFetch = () => {
             </div>
       </div>
   </div>`;
-  
     });
-    
 };
 
 dataFetch();
@@ -327,10 +325,9 @@ const newFech = (category) => {
                 </div>
                 </div>
                 </a>
-              </div>` 
-      )
-      
-        
+              </div>`
+      );
+
       load.innerHTML = dataTrans.join("");
     })
     .catch(() => {
@@ -343,6 +340,5 @@ const newFech = (category) => {
             </div>
       </div>
   </div>`;
-  
     });
 };
