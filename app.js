@@ -1,3 +1,5 @@
+const apilink = "https://fakestoreapi.com/products/";
+
 const load = document.getElementById("cardParent");
 
 const dataFetch = () => {
@@ -7,7 +9,7 @@ const dataFetch = () => {
 <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>`;
-  fetch("https://fakestoreapi.com/products")
+  fetch(apilink)
     .then((response) => {
       return response.json();
     })
@@ -17,7 +19,7 @@ const dataFetch = () => {
       const dataTrans = data.map(
         (d) =>
           `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3" key="${d.id}">
-        <a href="productsdetails.html?id=${d.id}">
+        <a href="productsdetails.html?id=${d.id}" style="text-decoration: none;">
           <div class="card m-2 myCard border border-dark">
                 <img src="${d.image}" class="card-img-top" style="height:200px; object-fit: contain;" alt="..." />
                 <div class="card-body">
@@ -298,7 +300,7 @@ dataFetch();
 // ]
 
 const newFech = (category) => {
-  fetch("https://fakestoreapi.com/products")
+  fetch(apilink)
     .then((response) => {
       return response.json();
     })
@@ -309,7 +311,7 @@ const newFech = (category) => {
       const dataTrans = newdata.map(
         (d) =>
           `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3" key="${d.id}">
-        <a href="#">
+        <a href="productsdetails.html?id=${d.id}" style="text-decoration: none;">
           <div class="card m-2 myCard border border-dark">
                 <img src="${d.image}" class="card-img-top" style="height:200px; object-fit: contain;" alt="..." />
                 <div class="card-body">

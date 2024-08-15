@@ -1,3 +1,6 @@
+const apilink = "https://fakestoreapi.com/products/";
+
+
 const getProductData = () => {
   const queryString = window.location.search;
   // console.log(queryString);
@@ -5,7 +8,7 @@ const getProductData = () => {
   const urlParams = new URLSearchParams(queryString);
   const id = urlParams.get("id");
   // console.log(id, "id");
-  fetch(`https://fakestoreapi.com/products/${id}`)
+  fetch(`${apilink}${id}`)
     .then((response) => {
       return response.json();
     })
@@ -95,13 +98,15 @@ const getProductData = () => {
     });
 };
 
+
+
 getProductData();
 
 const SMP = document.getElementById("parentCategory");
 // console.log(SMP);
 
 const similarCategoryProducts = (category) => {
-  fetch(`https://fakestoreapi.com/products/category/${category}?limit=4`)
+  fetch(`${apilink}category/${category}?limit=4`)
     .then((res) => res.json())
     .then((data) => {
       const mapCategory = data.map(
@@ -127,14 +132,3 @@ const similarCategoryProducts = (category) => {
 };
 
 
-{/* <div class="col-md-3 d-flex align-items-center justify-content-around" >
-                <div class="similar-product border border-black">
-                   <img
-                    class="w-50"
-                    src="${d.image}"
-                    alt="Preview"
-                  />
-                  <p class="title">${d.title}</p>
-                  <p class="price">$${d.price}</p>
-                </div>
-              </div> */}
