@@ -1,6 +1,5 @@
 const apilink = "https://fakestoreapi.com/products/";
 
-
 const getProductData = () => {
   const queryString = window.location.search;
   // console.log(queryString);
@@ -15,7 +14,7 @@ const getProductData = () => {
     .then((data) => {
       const pCategory = data.category;
       similarCategoryProducts(pCategory);
-      console.log("data",data);
+      console.log("data", data);
 
       const divtarg = document.getElementById("parentProduct");
       // console.log(divtarg, "divtarg");
@@ -91,14 +90,13 @@ const getProductData = () => {
               <b>Delivery options</b>
             </p>
             <p class="text-secondary">View delivery options here</p>
+            <a href="form.html"><button type="button" class="btn btn-dark btn-rounded" data-mdb-ripple-init>Order Now</button></a>
           </div>
         </div>
       </div>
     </div> `;
     });
 };
-
-
 
 getProductData();
 
@@ -130,5 +128,3 @@ const similarCategoryProducts = (category) => {
       SMP.innerHTML = mapCategory.join("");
     });
 };
-
-
