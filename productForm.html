@@ -57,69 +57,42 @@
           <h1>Product Form</h1>
         </div>
 
+        <!-- Text input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input type="text" id="form6Example4" class="form-control" />
+          <label class="form-label" for="form6Example4">Add Product Name</label>
+        </div>
+
         <form>
           <!-- Product Categories -->
-          <h2>Products Categories</h2>
-          <div class="d-flex gap-3 pt-3">
-            <div class="form-group pb-5">
-              <select class="custom-select p-2" required>
-                <option value="" selected disabled hidden>Men's Clothing</option>
-                <option value="2">Fjallraven - Foldsack No. 1 Backpack</option>
-                <option value="3">Mens Casual Premium Slim Fit T-Shirts</option>
-                <option value="4">Mens Cotton Jacket</option>
-                <option value="5">Mens Casual Slim Fit</option>
-              </select>
-            </div>
-            <div class="form-group pb-5">
-              <select class="custom-select p-2" required>
-                <option value="" selected disabled hidden>Women's Clothing</option>
-                <option value="2">
-                  BIYLACLESEN Women's 3-in-1 Winter Coats
-                </option>
-                <option value="3">Women'sLeather Moto Biker Jacket</option>
-                <option value="4">Rain Jacket Women Raincoats</option>
-                <option value="5">
-                  MBJ Women's Solid Short Sleeve Boat Neck V
-                </option>
-                <option value="6">Opna Women's Short Sleeve Moisture</option>
-                <option value="7">
-                  DANVOUY Womens T Shirt Casual Cotton Short
-                </option>
-              </select>
-            </div>
-          </div>
-
-          <div class="d-flex gap-3 pt-3">
-            <div class="form-group pb-5">
-              <select class="custom-select p-2" required>
-                <option value="" selected disabled hidden>Electronics</option>
-                <option value="2">WD 2TB Elements Hard Drive - USB 3.0</option>
-                <option value="3">SanDisk SSD 1TB Internal</option>
-                <option value="4">Silicon Power 256GB SSD</option>
-                <option value="5">WD 4TB Gaming Hard Drive</option>
-                <option value="6">Acer SB220Q 21.5 inch IPS Ultra-Thin</option>
-                <option value="7">Samsung 49-Inch CHG90 144Hz</option>
-              </select>
-            </div>
-            <div class="form-group pb-5">
-              <select class="custom-select p-2" required>
-                <option value="" selected disabled hidden>jewelery</option>
-                <option value="2">
-                    John Hardy Women's Chain Bracelet
-                </option>
-                <option value="3">Solid Gold Petite Micropave</option>
-                <option value="4">White Gold Plated Princess</option>
-                <option value="5">
-                    Pierced Rose Gold Plated Stainless Steel Double
-                </option>
-              </select>
-            </div>
+          <div class="form-group pb-5 pt-3">
+            <select class="custom-select p-2 w-100" required>
+              <option value="" selected disabled hidden>
+                Products Categories
+              </option>
+              <option value="2">Men's Clothing</option>
+              <option value="3">Women's Clothing</option>
+              <option value="4">Jewelery</option>
+              <option value="5">Electronics</option>
+            </select>
           </div>
 
           <!-- Product Quaintity -->
           <div data-mdb-input-init class="form-outline mb-4">
             <input type="number" id="form6Example6" class="form-control" />
-            <label class="form-label" for="form6Example6">Quaintity</label>
+            <label class="form-label" for="form6Example6">Add Quaintity</label>
+          </div>
+
+          <!-- Message input -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <textarea
+              class="form-control"
+              id="form6Example7"
+              rows="4"
+            ></textarea>
+            <label class="form-label" for="form6Example7"
+              >Additional information</label
+            >
           </div>
 
           <!-- Image Upload -->
@@ -133,18 +106,6 @@
             <div class="invalid-feedback">
               Example invalid custom file feedback
             </div>
-          </div>
-
-          <!-- Message input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-            <textarea
-              class="form-control"
-              id="form6Example7"
-              rows="4"
-            ></textarea>
-            <label class="form-label" for="form6Example7"
-              >Additional information</label
-            >
           </div>
 
           <!-- Submit button -->
