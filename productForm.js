@@ -1,4 +1,3 @@
-
 const formSubmit = () => {
   const title = document.getElementById("title").value;
   const productCategory = document.getElementById("productCategory").value;
@@ -6,37 +5,65 @@ const formSubmit = () => {
   const description = document.getElementById("description").value;
   const image = document.getElementById("image").value;
 
-    const productData = {
-        title: title,
-        productCategory: productCategory,
-        productQuantity: productQuantity,
-        description: description,
-        image: image
-    };
+  const data = {
+    title: title,
+    productCategory: productCategory,
+    productQuantity: productQuantity,
+    description: description,
+    image: image,
+  };
 
-    saveFormData(productData);
+  saveFormData(data, "productdata");
+  userFormSubmit();
+  categoryFormSubmit();
+  foodFromSubmit();
 
-setTimeout(() => {
-  document.addProductForm.reset();
-}, 4000);
+  // const storedFormData = JSON.parse(localStorage.getItem("productData")) || [];
 
-}
+  // storedFormData.push(productData);
 
-const saveFormData = (productData) => {
-    const storedFormData = JSON.parse(localStorage.getItem('productData')) || [];
+  // localStorage.setItem("productData", JSON.stringify(storedFormData));
+  // console.log(storedFormData);
 
-    storedFormData.push(productData);
+  setTimeout(() => {
+    document.addProductForm.reset();
+  }, 4000);
+};
 
-    localStorage.setItem('productData', JSON.stringify(storedFormData));
-    console.log(storedFormData)
-}
+const userFormSubmit = () => {
+  const data = {
+    id: 1,
+    name: "hammad",
+    email: "yugyg@gmail.com",
+  };
+  saveFormData(data, "userData");
+};
+const categoryFormSubmit = () => {
+  const categoryObj = {
+    id: 1,
+    name: "Footwear",
+    description: "best",
+  };
+  saveFormData(categoryObj, "categoryData");
+};
 
+const foodFromSubmit = () => {
+  const foodObj = {
+    id: 1,
+    name: "Zinger Burger",
+    category: "Fast Food",
+  };
+  saveFormData(foodObj, "foodData");
+};
 
+const saveFormData = (data, key) => {
+  const storedFormData = JSON.parse(localStorage.getItem(key)) || [];
 
+  storedFormData.push(data);
 
-
-
-
+  localStorage.setItem(key, JSON.stringify(storedFormData));
+  console.log(storedFormData);
+};
 
 // form submit
 
@@ -66,42 +93,36 @@ const saveFormData = (productData) => {
 
 // submit message show
 const message = () => {
-    const title = document.getElementById("title").value;
-    const category = document.getElementById("productCategory").value;
-    const quantity = document.getElementById("productQuantity").value;
-    const description = document.getElementById("description").value;
-    const image = document.getElementById("image").value;
-  
-    const messageSubmit = document.getElementById("messageSubmit");
-    const messageNotSubmit = document.getElementById("messageNotSubmit");
-  
-    if (title && category && quantity && description && image) {
-      messageSubmit.style.display = "block";
-      messageNotSubmit.style.display = "none";
-    } else {
-      messageSubmit.style.display = "none";
-      messageNotSubmit.style.display = "block";
-    }
-  
-    setTimeout(() => {
-      messageNotSubmit.style.display = "none";
-      messageSubmit.style.display = "none";
-    }, 4000);
+  const title = document.getElementById("title").value;
+  const category = document.getElementById("productCategory").value;
+  const quantity = document.getElementById("productQuantity").value;
+  const description = document.getElementById("description").value;
+  const image = document.getElementById("image").value;
+
+  const messageSubmit = document.getElementById("messageSubmit");
+  const messageNotSubmit = document.getElementById("messageNotSubmit");
+
+  if (title && category && quantity && description && image) {
+    messageSubmit.style.display = "block";
+    messageNotSubmit.style.display = "none";
+  } else {
+    messageSubmit.style.display = "none";
+    messageNotSubmit.style.display = "block";
+  }
+
+  setTimeout(() => {
+    messageNotSubmit.style.display = "none";
+    messageSubmit.style.display = "none";
+  }, 4000);
+};
+
+// imaageshow on screen
+const showImage = () => {
+  const imageShow = document.getElementById("imageShow");
+  const inputfile = document.getElementById("image");
+
+  inputfile.onchange = () => {
+    imageShow.src = URL.createObjectURL(inputfile.files[0]);
   };
-  
-  // imaageshow on screen
-  const showImage = () => {
-    const imageShow = document.getElementById("imageShow");
-    const inputfile = document.getElementById("image");
-  
-    inputfile.onchange = () => {
-      imageShow.src = URL.createObjectURL(inputfile.files[0]);
-    };
-  };
-  showImage();
-  
-  
-  
-  
-  
-  
+};
+showImage();

@@ -299,7 +299,7 @@ dataFetch();
 //   }
 // ]
 
-const newFech = (category) => {
+const getCategoryProducts = (category) => {
   fetch(apilink)
     .then((response) => {
       return response.json();

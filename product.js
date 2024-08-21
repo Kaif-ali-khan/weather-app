@@ -67,31 +67,10 @@ const getProductData = () => {
             </p>
           </div>
 
-          <div class="row questions bg-light p-3">
-            <div class="col-md-1 icon">
-              <i class="fa-brands fa-rocketchat questions-icon"></i>
-            </div>
-            <div class="col-md-11 text">
-              Have a question about our products at E-Store? Feel free to
-              contact our representatives via live chat or email.
-            </div>
-          </div>
+          
 
-          <div class="delivery my-4">
-            <p class="font-weight-bold mb-0">
-              <span><i class="fa-solid fa-truck"></i></span>
-              <b>Delivery done in 3 days from date of purchase</b>
-            </p>
-            <p class="text-secondary">Order now to get this product delivery</p>
-          </div>
-          <div class="delivery-options my-4">
-            <p class="font-weight-bold mb-0">
-              <span><i class="fa-solid fa-filter"></i></span>
-              <b>Delivery options</b>
-            </p>
-            <p class="text-secondary">View delivery options here</p>
-            <a href="form.html"><button type="button" class="btn btn-dark btn-rounded" data-mdb-ripple-init>Order Now</button></a>
-          </div>
+          
+          
         </div>
       </div>
     </div> `;
@@ -129,3 +108,48 @@ const similarCategoryProducts = (category) => {
     });
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <div class="row questions bg-light p-3">
+            <div class="col-md-1 icon">
+              <i class="fa-brands fa-rocketchat questions-icon"></i>
+            </div>
+            <div class="col-md-11 text">
+              Have a question about our products at E-Store? Feel free to
+              contact our representatives via live chat or email.
+            </div>
+          </div> */}
+
+
+
+{/* <div class="delivery my-4">
+            <p class="font-weight-bold mb-0">
+              <span><i class="fa-solid fa-truck"></i></span>
+              <b>Delivery done in 3 days from date of purchase</b>
+            </p>
+            <p class="text-secondary">Order now to get this product delivery</p>
+          </div>
+
+<div class="delivery-options my-4">
+<p class="font-weight-bold mb-0">
+  <span><i class="fa-solid fa-filter"></i></span>
+  <b>Delivery options</b>
+</p>
+<p class="text-secondary">View delivery options here</p>
+</div>
+
+<a href="form.html"><button type="button" class="btn btn-dark btn-rounded" data-mdb-ripple-init>Order Now</button></a> */}
