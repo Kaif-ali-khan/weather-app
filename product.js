@@ -128,3 +128,4 @@ const similarCategoryProducts = (category) => {
       SMP.innerHTML = mapCategory.join("");
     });
 };
+

@@ -50,59 +50,55 @@
 
     <div
       id="main"
-      class="p-5 d-flex align-items-center justify-content-around w-100 h-100"
+      class="p-5 d-flex align-items-center justify-content-around w-100 h-100 gap-5"
     >
       <div id="left w-50">
         <div class="one pb-5">
           <h1>Product Form</h1>
         </div>
 
-        <!-- Text input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input type="text" id="form6Example4" class="form-control" />
-          <label class="form-label" for="form6Example4">Add Product Name</label>
-        </div>
+        <form name="addProductForm" id="form">
+          <!-- Text input -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="form6Example4">Product Name</label>
+            <input type="text" id="title" class="form-control" required />
+          </div>
 
-        <form>
           <!-- Product Categories -->
           <div class="form-group pb-5 pt-3">
-            <select class="custom-select p-2 w-100" required>
-              <option value="" selected disabled hidden>
-                Products Categories
-              </option>
-              <option value="2">Men's Clothing</option>
-              <option value="3">Women's Clothing</option>
-              <option value="4">Jewelery</option>
-              <option value="5">Electronics</option>
+            <select
+              class="custom-select p-2 w-100"
+              id="productCategory"
+              required
+            >
+              <option selected disabled hidden>Products Categories</option>
+              <option value="Men's Clothing">Men's Clothing</option>
+              <option value="Women's Clothing">Women's Clothing</option>
+              <option value="Jewelery">Jewelery</option>
+              <option value="Electronics">Electronics</option>
             </select>
           </div>
 
           <!-- Product Quaintity -->
           <div data-mdb-input-init class="form-outline mb-4">
-            <input type="number" id="form6Example6" class="form-control" />
             <label class="form-label" for="form6Example6">Add Quaintity</label>
+            <input type="number" id="productQuantity" class="form-control" />
           </div>
 
           <!-- Message input -->
           <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="form6Example7">Description</label>
             <textarea
               class="form-control"
-              id="form6Example7"
+              id="description"
               rows="4"
+              required
             ></textarea>
-            <label class="form-label" for="form6Example7"
-              >Additional information</label
-            >
           </div>
 
           <!-- Image Upload -->
           <div class="custom-file pb-5">
-            <input
-              type="file"
-              class="custom-file-input"
-              id="validatedCustomFile"
-              required
-            />
+            <input type="file" class="custom-file-input" id="image" required />
             <div class="invalid-feedback">
               Example invalid custom file feedback
             </div>
@@ -110,27 +106,35 @@
 
           <!-- Submit button -->
           <button
+            onclick="formSubmit(); message();"
             data-mdb-ripple-init
             type="button"
             class="btn btn-dark btn-rounded"
+            id="submit"
           >
             Save
           </button>
+
+          <div id="message">
+            <p class="text-success pt-3 fs-5" id="messageSubmit">
+              thank them for filling out the form.
+            </p>
+            <p class="text-success pt-3 fs-5" id="messageNotSubmit">
+              Fields Can't be Empty
+            </p>
+          </div>
         </form>
       </div>
 
-      <div id="right w-50">
-        <!-- Map -->
-        <div id="contact">
-          <video
-            src="video/6767028-uhd_3840_2160_25fps.mp4"
-            muted
-            loop
-            autoplay
-            width="800px"
-          ></video>
-        </div>
-        <!-- /Map -->
+      <div id="right" class="w-50">
+        <!-- upload-img -->
+        <img
+          src="img/images.png"
+          class="w-100 border border-black object-fit-cover"
+          id="imageShow"
+          alt=""
+        />
+        <!-- upload-img-->
       </div>
     </div>
     <script
@@ -138,5 +142,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <script src="productForm.js""></script>
   </body>
 </html>
